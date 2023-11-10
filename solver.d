@@ -36,10 +36,26 @@ int solve_p2(int x, int depth){
     }
 }
 
-void printArray(int[] arr){
+void printIntArray(int[] arr){
     foreach (int val; arr)
     {
         writeln(val);
+    }
+}
+
+void printStringArray(string[] arr){
+    foreach (string val; arr)
+    {
+        writeln(val);
+    }
+}
+
+template print(T){
+    void printArray(T[] arr){
+        foreach (T val; arr)
+        {
+            writeln(val);
+        }
     }
 }
 

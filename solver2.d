@@ -11,14 +11,14 @@ void solve_p3 (int nmk){
     //writeln(text("Courses: ", nmk));
 
     //mk_list = [""] * nmk
-    string[] mk_list = new string[nmk];
+    //string[] mk_list = new string[nmk];
     //sks_list = [0] * nmk 
-    int[] sks_list = new int[nmk]; 
+    //int[] sks_list = new int[nmk]; 
     //score_list = [0] * nmk
-    double[] score_list = new double[nmk];
+    //double[] score_list = new double[nmk];
     //alpha_score_list = mk_list.copy()
     //string[] grade_list = new string[nmk];
-    double[string] contribution = [
+    /*double[string] contribution = [
     "A" : 4,
     "A-" : 3.7,
     "B+" : 3.3,
@@ -29,7 +29,7 @@ void solve_p3 (int nmk){
     "C-" : 1.7,
     "D" : 1,
     "E" : 0
-    ];
+    ];*/
 
     StudentScore[] student_score = new StudentList().constructList(nmk);
 

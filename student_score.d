@@ -49,4 +49,8 @@ class StudentScore
         else
             return "A";
     }
+
+    public static StudentScore getStudentScore(){
+        return new StudentScore();
+    }
 }

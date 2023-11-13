@@ -36,27 +36,6 @@ int solve_p2(int x, int depth){
     }
 }
 
-void printIntArray(int[] arr){
-    foreach (int val; arr)
-    {
-        writeln(val);
-    }
+void solve_sort_indexes(int[] data){
+    //TODO: Solve the solution
 }
-
-void printStringArray(string[] arr){
-    foreach (string val; arr)
-    {
-        writeln(val);
-    }
-}
-
-template print(T){
-    void printArray(T[] arr){
-        foreach (T val; arr)
-        {
-            writeln(val);
-        }
-    }
-}
-
-

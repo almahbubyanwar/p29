@@ -4,6 +4,8 @@ import std.stdio;
 import std.conv;
 import solver;
 import std.format;
+import student_list;
+import student_score;
 
 void solve_p3 (int nmk){
     //writeln(text("Courses: ", nmk));
@@ -28,11 +30,13 @@ void solve_p3 (int nmk){
     "D" : 1,
     "E" : 0
     ];
-    
+
+    StudentScore[] student_score = new StudentList().constructList(nmk);
 
     for(int i=0;i<nmk;i++){
         writeln("Please enter Course Name, SKS Credit, Score separated by white space");
-        readf("%s %d %e\n", &mk_list[i], &sks_list[i], &score_list[i]);
+        //readf("%s %d %e\n", &mk_list[i], &sks_list[i], &score_list[i]);
+        readf("%s %d %e\n", student_score[i].mk_name, student_score[i].sks, &student_score[i].score);
         
         //write("Course score: ");
         //readf("%f", &score_list);
@@ -47,12 +51,15 @@ void solve_p3 (int nmk){
     double ip = 0;
     int sum_sks = 0;
     for(int i=0;i<nmk;i++){
-        string grade = to_grade(score_list[i]);
-        double weight = contribution[grade];
-        writeln(format("%s \t %d \t %10.2f \t %s \t %10.2f \n", mk_list[i], 
-            sks_list[i], score_list[i], grade, weight));
-        ip += sks_list[i] * contribution[grade];
-        sum_sks += sks_list[i];
+        StudentScore score = student_score[i];
+        string grade = score.to_grade(score.score);
+        double weight = score.to_contribution(grade);
+        //writeln(format("%s \t %d \t %10.2f \t %s \t %10.2f \n", mk_list[i], 
+        //    sks_list[i], score_list[i], grade, weight));
+        writeln(format("%s \t %d \t %10.2f \t %s \t %10.2f \n", score.mk_name, 
+            score.sks, score.score, grade, weight));
+        ip += score.sks * weight;
+        sum_sks += score.sks;
     }
 
     //printf("ip: %f\n ", ip);

@@ -2,16 +2,17 @@ module io;
 import std.stdio;
 import solver;
 
-void parse_input(string path){
+int[] parse_input(string path){
     File file = File(path, "r");
     int ncase;
     file.readf!"%d\n"(ncase);
-    writefln("%d", ncase);
+    //writefln("%d", ncase);
     int[] data = new int[ncase];
     for(int i=0; i< ncase;i++){
         file.readf!"%d "(data[i]);
     }
-    print!(int).printArray(data);
+    //print!(int).printArray(data);
+    return data;
 }
 
 void printIntArray(int[] arr){

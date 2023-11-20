@@ -8,6 +8,6 @@ int main()
 {
     string filepath = "../input";
     int[] data = parse_input(filepath);
-    print!int.printArray(data);
+    solve_sort_indexes(data);
     return 0;
 }

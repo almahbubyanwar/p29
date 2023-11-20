@@ -33,8 +33,9 @@ template print(T){
     void printArray(T[] arr){
         foreach (T val; arr)
         {
-            writeln(val);
+            writef("%d ", val);
         }
+        writeln();
     }
 }
 

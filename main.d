@@ -1,6 +1,5 @@
 import std.stdio;
 import solver;
-import solver2;
 import std.format;
 import io;
 

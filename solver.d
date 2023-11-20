@@ -124,7 +124,3 @@ string to_grade(double d){
     else
         return "A";
 }
-
-void solve_sort_indexes(int[] data){
-    //TODO: Solve the solution
-}
